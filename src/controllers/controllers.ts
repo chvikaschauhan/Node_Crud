@@ -6,6 +6,13 @@ namespace controllers{
         var result = await client.query('select * from company')
         return result.rows
     }
+   export async function getOneEmp(emp_id :number): Promise<models.emp[]> {
+        console.log("Emp id in controller", emp_id)
+        var result =await client.query('select * from company where id = $1',[emp_id])
+        console.log("result in controller", result.rows)
+        return result.rows
+        
+    }
 
     export async function insertOneEmployee(name : string, age: number, address : string, salary: number) {
 

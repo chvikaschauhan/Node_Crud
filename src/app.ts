@@ -19,8 +19,9 @@ app.use(cors())
 app.use(cookieParser())
 app.use('/api',router)
 
-app.get("/",(req, res) => {
+app.get("/:id",(req, res) => {
     console.log("here it reached")
+    console.log("here id ",req.params.id)
     res.status(200).send("hello2222")
 })
 

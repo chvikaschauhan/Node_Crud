@@ -6,6 +6,14 @@ var handelers;
         res.status(200).send(result);
     }
     handelers.getAllEmp = getAllEmp;
+    async function getOneEmp(req, res) {
+        var emp_id = parseInt(req.params.id);
+        console.log("Emp id in handelers", emp_id);
+        var result = await controllers.getOneEmp(emp_id);
+        console.log("result in hand", result);
+        res.status(200).send(result);
+    }
+    handelers.getOneEmp = getOneEmp;
     async function insertOneEmployee(req, res) {
         var obj = req.body;
         var result = await controllers.insertOneEmployee(obj.name, obj.age, obj.address, obj.salary);

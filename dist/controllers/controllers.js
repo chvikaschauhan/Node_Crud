@@ -6,6 +6,13 @@ var controllers;
         return result.rows;
     }
     controllers.getAllEmp = getAllEmp;
+    async function getOneEmp(emp_id) {
+        console.log("Emp id in controller", emp_id);
+        var result = await client.query('select * from company where id = $1', [emp_id]);
+        console.log("result in controller", result.rows);
+        return result.rows;
+    }
+    controllers.getOneEmp = getOneEmp;
     async function insertOneEmployee(name, age, address, salary) {
         try {
             var result = await client.query('insert into company(name, age, address, salary) values($1,$2,$3,$4)', [name, age, address, salary]);

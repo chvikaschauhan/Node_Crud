@@ -10,6 +10,15 @@ namespace handelers {
       res.status(200).send(result)
       
    }
+   export async function getOneEmp(req : Request,res : Response) {
+
+    var emp_id = parseInt(req.params.id)
+    console.log("Emp id in handelers", emp_id)
+    var result = await controllers.getOneEmp(emp_id)
+    console.log("result in hand", result)
+    res.status(200).send(result)
+    
+   }
     export async function insertOneEmployee(req : Request, res: Response) {
       
        var obj : models.emp = req.body
