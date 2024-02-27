@@ -2,11 +2,11 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  create_and_run_docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: '18.17.1'
-      - run: node --version
+      - run: docker build -t postgres_node_6.26 .  
