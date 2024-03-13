@@ -20,6 +20,7 @@ var controllers;
         }
         catch (error) {
             console.log(error);
+            return error;
         }
     }
     controllers.insertOneEmployee = insertOneEmployee;

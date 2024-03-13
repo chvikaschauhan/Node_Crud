@@ -1,5 +1,5 @@
 import pg from "pg";
-const connetionString = { host: 'host.docker.internal', port: 5433, dbname: 'postgres', user: 'postgres', password: '8755', sslmode: 'prefer', connect_timeout: 10 };
+const connetionString = { host: 'localhost', port: 5433, dbname: 'postgres', user: 'postgres', password: '8755', sslmode: 'prefer', connect_timeout: 10 };
 async function ConnectToDb(connectString) {
     const pool = new pg.Pool(connectString);
     const client = await pool.connect();

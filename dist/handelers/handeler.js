@@ -16,7 +16,12 @@ var handelers;
     handelers.getOneEmp = getOneEmp;
     async function insertOneEmployee(req, res) {
         var obj = req.body;
-        var result = await controllers.insertOneEmployee(obj.name, obj.age, obj.address, obj.salary);
+        try {
+            var result = await controllers.insertOneEmployee(obj.name, obj.age, obj.address, obj.salary);
+        }
+        catch (error) {
+            res.status(500).send(error);
+        }
         res.status(200).send(result);
     }
     handelers.insertOneEmployee = insertOneEmployee;

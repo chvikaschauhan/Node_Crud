@@ -25,6 +25,7 @@ namespace handelers {
      try {
       var result = await controllers.insertOneEmployee(obj.name,obj.age,obj.address,obj.salary)
      } catch (error) {
+      
       res.status(500).send(error)
      }
       res.status(200).send(result) 
