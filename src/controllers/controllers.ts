@@ -14,13 +14,14 @@ namespace controllers{
         
     }
 
-    export async function insertOneEmployee(name : string, age: number, address : string, salary: number) {
+    export async function insertOneEmployee(name : string, age: number, address : string, salary: number)  {
 
         try {
             var result = await client.query('insert into company(name, age, address, salary) values($1,$2,$3,$4)', [name,age,address,salary] )
             return result
         } catch (error) {
             console.log(error)
+            return error
         }
         
     }
