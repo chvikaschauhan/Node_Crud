@@ -22,7 +22,11 @@ namespace handelers {
     export async function insertOneEmployee(req : Request, res: Response) {
       
        var obj : models.emp = req.body
+     try {
       var result = await controllers.insertOneEmployee(obj.name,obj.age,obj.address,obj.salary)
+     } catch (error) {
+      res.status(500).send(error)
+     }
       res.status(200).send(result) 
     }
     export async function updateOneEmpSalary(req:Request, res : Response) {
