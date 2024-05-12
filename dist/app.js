@@ -16,6 +16,7 @@ app.get("/:id", (req, res) => {
     console.log("here id ", req.params.id);
     res.status(200).send("hello2222");
 });
+//const host = '10.0.2.2' ;
 var server = app.listen(8002, () => {
     console.log("server running", server.address());
 });
