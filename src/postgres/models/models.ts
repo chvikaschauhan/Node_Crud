@@ -1,7 +1,7 @@
 namespace models{
 
 export interface emp {
-    id : number
+    id : number,
     name : string,
     age : number,
     address : string,
